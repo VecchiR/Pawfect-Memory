@@ -15,7 +15,7 @@ export default function GameplayScreen({ setActiveScreen, difficulty, dogsArr })
       </div>
       <ScoreBoard />
 
-      {dogsArr != null ? <GameBoard difficulty={difficulty} dogsArr={dogsArr} /> : null}
+      {dogsArr != null ? <GameBoard difficulty={difficulty} dogsArr={dogsArr} /> : <p>Loading dogs...</p>}
     </>
   );
 }
