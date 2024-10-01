@@ -1,5 +1,6 @@
+
 export default function ScoreBoard() {
-  
+
     return (
       <div className="scoreboard-container">
         <div className="score"></div>

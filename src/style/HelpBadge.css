@@ -1,0 +1,15 @@
+.help-badge img {
+    width: 50px;
+    position: fixed;
+    bottom: 0;
+    right: 0px;
+}
+
+.rules {
+    text-align: left;
+    background-color: blueviolet;
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1;
+}

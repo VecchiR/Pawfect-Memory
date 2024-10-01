@@ -15,11 +15,11 @@ App
 
 Eu comecei pela GameplayScreen. Tem que renderizar:
     HelpBadge
-        Renderiza o botão de ajuda/regras ("rules on hover")
+        OK - Renderiza o botão de ajuda/regras ("rules on hover")
     ScoreBoard
         Renderiza o placar
     GameBoard
-        Renderiza as CARTAS
+        OK - Renderiza as CARTAS
             OK - Precisa saber QUANTAS cartas mostrar
                 OK - Calcula através da DIFICULDADE
             OK - Precisa do componente CARD
@@ -35,5 +35,5 @@ Eu comecei pela GameplayScreen. Tem que renderizar:
                 
                 
 FANCYNESS:                
-- CAAAAAAAAAAAAAAAAAAAAAAAN I? -> acessar a url do .jpg pra enxergar width x height? Quem sabe, pra recusar imagens que vão ficar ruins de enxergar
+OK - CAAAAAAAAAAAAAAAAAAAAAAAN I? -> acessar a url do .jpg pra enxergar width x height? Quem sabe, pra recusar imagens que vão ficar ruins de enxergar
 - ao clicar na carta, todas viram "de costas" por alguns segundos/até carregar "next random board"
