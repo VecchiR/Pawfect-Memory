@@ -14,6 +14,34 @@ async function getRandomImageURL() {
 }
 
 
+
+async function imgRatioIsAppropriate(url) {
+
+    //check 
+    const ratio = await getImageRatio(url);
+    console.log(ratio);
+    return ratio >= 0.9 && ratio <= 1.4;
+
+}
+
+async function getImageRatio(url) {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+
+        img.onload = function () {
+            const ratio = img.naturalWidth / img.naturalHeight;
+            resolve(ratio);
+        };
+
+        img.onerror = function () {
+            reject('Failed to load image');
+        };
+
+        img.src = url;
+    });
+}
+
+
 async function getDogs() {
     const dogsArr = [];
 
@@ -26,7 +54,9 @@ async function getDogs() {
                 .replace(/-/g, ' ')
                 .replace(/\b\w/g, char => char.toUpperCase());
 
-            if (!dogsArr.some(dog => dog.breed === formattedBreedName)) {
+            const ratioIsOk = await imgRatioIsAppropriate(newUrl);
+
+            if (!dogsArr.some(dog => dog.breed === formattedBreedName) && ratioIsOk) {
                 dogsArr.push({
                     breed: formattedBreedName,
                     url: newUrl
@@ -38,5 +68,7 @@ async function getDogs() {
     return dogsArr;
 }
 
+
+// getDogs();
 
 export default getDogs;

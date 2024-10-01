@@ -22,10 +22,10 @@ Eu comecei pela GameplayScreen. Tem que renderizar:
         Renderiza as CARTAS
             OK - Precisa saber QUANTAS cartas mostrar
                 OK - Calcula através da DIFICULDADE
-            - Precisa do componente CARD
+            OK - Precisa do componente CARD
                 OK - o card é um container com IMAGEM DO DOG + BREEDNAME na legenda
-                - o card tem que receber o IMGURL e BREEDNAME do GameBoard
-                    - GameBoard tem que invocar as cartas (considerando o número certo)
+                OK - o card tem que receber o IMGURL e BREEDNAME do GameBoard
+                    OK - GameBoard tem que invocar as cartas (considerando o número certo)
                 
                 
                 
@@ -35,4 +35,5 @@ Eu comecei pela GameplayScreen. Tem que renderizar:
                 
                 
 FANCYNESS:                
+- CAAAAAAAAAAAAAAAAAAAAAAAN I? -> acessar a url do .jpg pra enxergar width x height? Quem sabe, pra recusar imagens que vão ficar ruins de enxergar
 - ao clicar na carta, todas viram "de costas" por alguns segundos/até carregar "next random board"

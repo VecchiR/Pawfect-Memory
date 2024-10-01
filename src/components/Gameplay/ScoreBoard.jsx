@@ -1,8 +1,9 @@
 export default function ScoreBoard() {
   
     return (
-      <>
-      <div className="test">Scoreboard</div>
-      </>
+      <div className="scoreboard-container">
+        <div className="score"></div>
+        <div className="best-score"></div>
+      </div>
     )
   }
