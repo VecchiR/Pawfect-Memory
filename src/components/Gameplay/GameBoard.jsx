@@ -1,7 +1,7 @@
-import '../style/App.css';
-import '../style/index.css';
+import '../../style/App.css';
+import '../../style/index.css';
 
-export default function Gameboard({difficulty}) {
+export default function GameBoard({difficulty}) {
   
   const cardsToShow = difficulty === 1 ? 8 : difficulty < 3 ? 14 : 20;
   const cardsToShowArr = Array.from({ length: cardsToShow }, (_, index) => (

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import '../style/App.css'
-import GameplayScreen from './GameplayScreen'
+import GameplayScreen from './Gameplay/GameplayScreen'
 import getDogs from '../assets/dogImages'
 
 export default function App() {

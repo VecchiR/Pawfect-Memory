@@ -1,0 +1,13 @@
+dogImages.js -> get all data BEFORE initializing the game
+
+App
+    HomeScreen
+        DifficultySelector
+    GameplayScreen
+        ScoreBoard
+        GameBoard
+        HelpBadge
+    GameOverScreen
+        GameOverMessage
+        GameOverPrompt
+        GameOverOptions

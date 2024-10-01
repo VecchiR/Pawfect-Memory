@@ -1,4 +1,4 @@
-export default function Scoreboard() {
+export default function ScoreBoard() {
   
     return (
       <>
