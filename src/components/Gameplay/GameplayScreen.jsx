@@ -3,7 +3,7 @@ import GameBoard from './GameBoard';
 import HelpBadge from '../HelpBadge';
 import { useState } from 'react';
 
-export default function GameplayScreen({ setActiveScreen, difficulty }) {
+export default function GameplayScreen({ setActiveScreen, difficulty, dogsArr }) {
 
   const goHome = () => {
     setActiveScreen('home');
@@ -18,6 +18,10 @@ export default function GameplayScreen({ setActiveScreen, difficulty }) {
       <ScoreBoard />
       <GameBoard difficulty={difficulty}/>
       <HelpBadge />
+
+      
+
+
     </>
   );
 }

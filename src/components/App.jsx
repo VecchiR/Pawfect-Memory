@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react'
-import '../style/App.css'
-import GameplayScreen from './Gameplay/GameplayScreen'
-import getDogs from '../assets/dogImages'
+import { useEffect, useState } from 'react';
+import '../style/App.css';
+import GameplayScreen from './Gameplay/GameplayScreen';
+import getDogs from '../assets/dogImages';
+import GameBoard from './Gameplay/GameBoard';
 
 export default function App() {
   const [activeScreen, setActiveScreen] = useState('home');
@@ -16,23 +17,12 @@ export default function App() {
     fetchDogs();
   }, []);
 
-
   return (
     <>
-      <GameplayScreen setActiveScreen={setActiveScreen} />
-      <div>
-        {dogsArr ? (
-          dogsArr.map((dog, index) => (
-            <div key={index}>
-              <h3>{dog.breed}</h3>
-              <img src={dog.url} alt={dog.breed} />
-            </div>
-          ))
-        ) : (
-          <p>Loading dogs...</p>
-        )}
-      </div>
+      {/* <GameplayScreen setActiveScreen={setActiveScreen} dogsArr={dogsArr} /> */}
+      {/* <div>{dogsArr ? <p>LOAD GAMEPLAY SCREEN</p> : <p>Loading dogs...</p>}</div> */}
+      {/* <div>{dogsArr ? <GameBoard/> : <p>Loading dogs...</p>}</div> */}
+      <GameBoard/>
     </>
   );
 }
-

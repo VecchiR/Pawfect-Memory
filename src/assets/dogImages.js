@@ -17,7 +17,7 @@ async function getRandomImageURL() {
 async function getDogs() {
     const dogsArr = [];
 
-    for (let i = 0; i <= 19; i++) {
+    for (let i = 0; i <= 24; i++) {
         let goToNext = false;
         while (!goToNext) {
             const newUrl = await getRandomImageURL();

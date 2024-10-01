@@ -23,3 +23,16 @@ Eu comecei pela GameplayScreen. Tem que renderizar:
             OK - Precisa saber QUANTAS cartas mostrar
                 OK - Calcula através da DIFICULDADE
             - Precisa do componente CARD
+                OK - o card é um container com IMAGEM DO DOG + BREEDNAME na legenda
+                - o card tem que receber o IMGURL e BREEDNAME do GameBoard
+                    - GameBoard tem que invocar as cartas (considerando o número certo)
+                
+                
+                
+                
+                
+                
+                
+                
+FANCYNESS:                
+- ao clicar na carta, todas viram "de costas" por alguns segundos/até carregar "next random board"

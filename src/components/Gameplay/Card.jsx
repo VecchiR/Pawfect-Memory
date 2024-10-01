@@ -1,8 +1,11 @@
-export default function Card() {
+import '../../style/Card.css';
+
+export default function Card({imgUrl, breedName }) {
   
     return (
-      <>
-      <div className="test">Card</div>
-      </>
+      <div className="card-container">
+        <img src={imgUrl} alt={breedName} />
+        <p>{breedName}</p>
+      </div>
     )
   }
