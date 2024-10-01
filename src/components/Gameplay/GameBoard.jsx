@@ -4,12 +4,19 @@ import '../../style/index.css';
 import Card from './Card';
 import '../../style/GameBoard.css';
 import ScoreBoard from './ScoreBoard';
-import HelpBadge from '../HelpBadge';
 
 export default function GameBoard({ difficulty = 1, score, bestScore, dogsArr }) {
   const numberOfCards = difficulty === 1 ? 9 : difficulty < 3 ? 16 : 25;
 
-  const cardsToShowArr = dogsArr.slice(0, numberOfCards);
+  var cardsToShowArr;
+
+  const areCardsReady = () => {
+    if (dogsArr) {
+      cardsToShowArr = dogsArr.slice(0, numberOfCards);
+      return true;
+    }
+    return false;
+  };
 
   const invokeCards = () => {
     try {
@@ -17,7 +24,7 @@ export default function GameBoard({ difficulty = 1, score, bestScore, dogsArr })
         <>
           {cardsToShowArr.map((dog, index) => {
             console.log('inside the each. Now going through: ', dog);
-            return <Card imgUrl={dog.url} breedName={dog.breed} />;
+            return <Card key={index} imgUrl={dog.url} breedName={dog.breed} />;
           })}
         </>
       );
@@ -29,11 +36,10 @@ export default function GameBoard({ difficulty = 1, score, bestScore, dogsArr })
   return (
     <>
       <ScoreBoard />
-      <HelpBadge />
-      <div className={`gameboard grid-${numberOfCards}`}>
-        {dogsArr ? invokeCards() : <p>Loading...</p>}
-      </div>
 
+      <div className={`gameboard grid-${numberOfCards}`}>
+        {areCardsReady() ? invokeCards() : <p>Loading dogs...</p>}
+      </div>
     </>
   );
 }

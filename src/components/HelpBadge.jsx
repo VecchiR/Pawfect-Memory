@@ -20,8 +20,8 @@ export default function HelpBadge() {
       {showRules ? (
         <div className="rules">
           <ul>
-            <li>Do this here, actually written right here</li>
-            <li>And then, there's this important thing here, also</li>
+            <li>Click on each dog only ONCE!</li>
+            <li>Click on the logo to return to home page</li>
           </ul>
         </div>
       ) : null}
