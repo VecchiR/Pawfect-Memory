@@ -11,3 +11,15 @@ App
         GameOverMessage
         GameOverPrompt
         GameOverOptions
+
+
+Eu comecei pela GameplayScreen. Tem que renderizar:
+    HelpBadge
+        Renderiza o botão de ajuda/regras ("rules on hover")
+    ScoreBoard
+        Renderiza o placar
+    GameBoard
+        Renderiza as CARTAS
+            OK - Precisa saber QUANTAS cartas mostrar
+                OK - Calcula através da DIFICULDADE
+            - Precisa do componente CARD
