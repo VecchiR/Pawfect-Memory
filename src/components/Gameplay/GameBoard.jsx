@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../../style/App.css';
 import '../../style/index.css';
 import Card from './Card';
@@ -8,29 +8,40 @@ import ScoreBoard from './ScoreBoard';
 export default function GameBoard({ difficulty = 1, score, bestScore, dogsArr }) {
   const numberOfCards = difficulty === 1 ? 9 : difficulty < 3 ? 16 : 25;
 
-  var cardsToShowArr;
-
-  const areCardsReady = () => {
+  const [cardsToShowArr, setCardsToShowArr] = useState(null);
+  useEffect(() => {
     if (dogsArr) {
-      cardsToShowArr = dogsArr.slice(0, numberOfCards);
-      return true;
+      setCardsToShowArr(dogsArr.slice(0, numberOfCards));
     }
-    return false;
-  };
+  }, [dogsArr, numberOfCards]);
+
+  // let cardsToShowArr;
+  // const areCardsReady = () => {
+  //   if (dogsArr) {
+  //     // cardsToShowArr = dogsArr.slice(0, numberOfCards);
+  //     setCardsToShowArr(dogsArr.slice(0, numberOfCards));
+  //     return true;
+  //   }
+  //   return false;
+  // };
 
   const invokeCards = () => {
-    try {
-      return (
-        <>
-          {cardsToShowArr.map((dog, index) => {
+    return (
+      <>
+        {cardsToShowArr &&
+          cardsToShowArr.map((dog, index) => {
             console.log('inside the each. Now going through: ', dog);
-            return <Card key={index} imgUrl={dog.url} breedName={dog.breed} />;
+            return (
+              <Card
+                key={index}
+                imgUrl={dog.url}
+                breedName={dog.breed}
+                setCardsToShowArr={setCardsToShowArr}
+              />
+            );
           })}
-        </>
-      );
-    } catch (error) {
-      console.log('cardsToShowArr: ', cardsToShowArr);
-    }
+      </>
+    );
   };
 
   return (
@@ -38,7 +49,10 @@ export default function GameBoard({ difficulty = 1, score, bestScore, dogsArr })
       <ScoreBoard />
 
       <div className={`gameboard grid-${numberOfCards}`}>
-        {areCardsReady() ? invokeCards() : <p>Loading dogs...</p>}
+        
+        {/* {areCardsReady() ? invokeCards() : <p>Loading dogs...</p>} */}
+        {cardsToShowArr ? invokeCards() : <p>Loading dogs...</p>}      
+
       </div>
     </>
   );

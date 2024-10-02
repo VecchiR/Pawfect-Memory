@@ -9,10 +9,10 @@ export default function GameplayScreen({ setActiveScreen, difficulty, dogsArr })
 
   return (
     <>
-      <h2>This is the Gameplay Screen</h2>
       <div className="logo-small" onClick={goHome}>
         Logo
       </div>
+      <h2>This is the Gameplay Screen</h2>
       <ScoreBoard />
 
       {dogsArr != null ? <GameBoard difficulty={difficulty} dogsArr={dogsArr} /> : <p>Loading dogs...</p>}

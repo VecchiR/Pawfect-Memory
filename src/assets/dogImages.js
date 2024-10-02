@@ -65,6 +65,7 @@ async function getDogs() {
             }
         }
     }
+    console.log('Finished fetching dogs');
     return dogsArr;
 }
 

@@ -13,19 +13,22 @@ App
         GameOverOptions
 
 
-Eu comecei pela GameplayScreen. Tem que renderizar:
-    HelpBadge
-        OK - Renderiza o botão de ajuda/regras ("rules on hover")
-    ScoreBoard
-        Renderiza o placar
-    GameBoard
-        OK - Renderiza as CARTAS
-            OK - Precisa saber QUANTAS cartas mostrar
-                OK - Calcula através da DIFICULDADE
-            OK - Precisa do componente CARD
-                OK - o card é um container com IMAGEM DO DOG + BREEDNAME na legenda
-                OK - o card tem que receber o IMGURL e BREEDNAME do GameBoard
-                    OK - GameBoard tem que invocar as cartas (considerando o número certo)
+Eu comecei pela GameplayScreen. 
+    Tem que renderizar:
+        HelpBadge
+            OK - Renderiza o botão de ajuda/regras ("rules on hover")
+        ScoreBoard
+            Renderiza o placar
+        GameBoard
+            OK - Renderiza as CARTAS
+                OK - Precisa saber QUANTAS cartas mostrar
+                    OK - Calcula através da DIFICULDADE
+                OK - Precisa do componente CARD
+                    OK - o card é um container com IMAGEM DO DOG + BREEDNAME na legenda
+                    OK - o card tem que receber o IMGURL e BREEDNAME do GameBoard
+                        OK - GameBoard tem que invocar as cartas (considerando o número certo)
+    Funcionalidade:
+        - click on a card -> randomize positions
                 
                 
                 
