@@ -1,10 +1,13 @@
 import '../../style/Card.css';
 
-export default function Card({imgUrl, breedName, setCardsToShowArr }) {
+export default function Card({imgUrl, breedName, shuffleCards }) {
   
   const handleCardClick = (e) => {
     console.log(e.currentTarget);
+    shuffleCards();
   }
+
+
 
     return (
       <div className="card-container" onClick={handleCardClick}>
