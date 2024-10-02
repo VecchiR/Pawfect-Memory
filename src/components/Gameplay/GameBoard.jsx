@@ -44,8 +44,22 @@ export default function GameBoard({ difficulty = 1, score, bestScore, dogsArr })
       if (!isClicked) {
         markCard(breed);
 
+        // AFTER marking, are ALL cards clicked NOW?
+        let allClickStatus = [];
+        cardsToShowArr.forEach((dog, i) => {
+          if(i != breedIndex) {
+            dog.clicked ? allClickStatus.push('yes') : allClickStatus.push('no');
+          }
+        })
+          
+        if (allClickStatus.every(status => status === 'yes')) {
+          alert('you won, babyyyyyyyyyyyyyyy');
+        }
+
         shuffleCards();
-      } else {
+      } 
+      
+      else {
         alert('this dog was already clicked');
       }
     }

@@ -29,7 +29,7 @@ Eu comecei pela GameplayScreen.
                         OK - GameBoard tem que invocar as cartas (considerando o número certo)
     Funcionalidade:
         OK - click on a card -> randomize positions
-        - Keep track of clicked cards
+        OK - Keep track of clicked cards
         - Check after click: is it a NEW click or a DOUBLE click on a card? If NEW click, have ALL cards been clicked?
             - se double click -> game over screen 
             - se all clicked -> game over screen
