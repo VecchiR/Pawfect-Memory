@@ -7,6 +7,10 @@ export default function GameplayScreen({ setActiveScreen, difficulty, dogsArr })
     setActiveScreen('home');
   };
 
+  const handleEndGame = () => {
+
+  };
+
   return (
     <>
       <div className="logo-small" onClick={goHome}>

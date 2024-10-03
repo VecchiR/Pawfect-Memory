@@ -19,7 +19,7 @@ export default function App() {
       setDogsArr(dogs);
     }
 
-    //fetchDogs();    // THIS IS THE REAL DEAL: uncomment this and comment the "setDogsArr" below to fetch dogs from api
+    // fetchDogs();    // THIS IS THE REAL DEAL: uncomment this and comment the "setDogsArr" below to fetch dogs from api
     
     setDogsArr([ // THIS IS A MOCK, just to avoid fetching this array everytime I want to update the app
       {
