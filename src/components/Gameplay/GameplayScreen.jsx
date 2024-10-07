@@ -16,51 +16,56 @@ export default function GameplayScreen({
 
   const numberOfCards = difficulty === 1 ? 9 : difficulty < 3 ? 16 : 25;
 
-  const scoreBoard = {
-    score: score,
-    bestScore: bestScore,
-    updateScoreboard: () => {
-      const newScore = score + 1;
-      setScore(newScore);
+  const updateScoreboard = () => {
+    const newScore = score + 1;
+    setScore(newScore);
 
-      const diff = difficulty === 1 ? 'easy' : difficulty === 2 ? 'medium' : 'hard';
-      const bestScoreCOPY = { ...bestScore };
-      if (newScore > bestScoreCOPY[`${diff}`]) {
-        bestScoreCOPY[`${diff}`] = newScore;
-        setBestScore({ ...bestScoreCOPY });
-      }
-    },
+    const diff = difficulty === 1 ? 'easy' : difficulty === 2 ? 'medium' : 'hard';
+    const bestScoreCOPY = { ...bestScore };
+    if (newScore > bestScoreCOPY[`${diff}`]) {
+      bestScoreCOPY[`${diff}`] = newScore;
+      setBestScore({ ...bestScoreCOPY });
+    }
+  };
 
-    resetScore: () => {
-      setScore(0);
-    },
+  const resetScore = () => { 
+    setScore(0);
   };
 
   const goHome = () => {
     setActiveScreen('home');
   };
 
-  const handleGameOver = () => {
-    scoreBoard.resetScore();
-    setActiveScreen('gameover');
+  const handleGameOver = (levelBeaten) => {
+    setActiveScreen({ gameover: true, levelBeaten: levelBeaten });
   };
+
+  const tryAgain = () => {
+    resetScore();
+    setActiveScreen('gameplay');
+  }
 
   return (
     <>
       <div className="logo-small" onClick={goHome}>
-        {' '}
-        Logo{' '}
+        Logo
       </div>
 
-      {activeScreen === 'gameover' ? (
-        <GameOverScreen />
+      {activeScreen.gameover ? (
+        <GameOverScreen
+          levelBeaten={activeScreen.levelBeaten}
+          numberOfCards={numberOfCards}
+          score={score}
+          tryAgain={tryAgain}
+          goHome={goHome}
+        />
       ) : (
         <>
           <h2>This is the Gameplay Screen</h2>
           <ScoreBoard
-            score={scoreBoard.score}
+            score={score}
             bestScore={
-              scoreBoard.bestScore[
+              bestScore[
                 `${difficulty === 1 ? 'easy' : difficulty === 2 ? 'medium' : 'hard'}`
               ]
             }
@@ -72,7 +77,7 @@ export default function GameplayScreen({
               difficulty={difficulty}
               dogsArr={dogsArr}
               numberOfCards={numberOfCards}
-              scoreBoard={scoreBoard}
+              updateScoreboard={updateScoreboard}
               handleGameOver={handleGameOver}
             />
           ) : (

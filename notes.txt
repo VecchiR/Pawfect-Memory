@@ -18,7 +18,7 @@ Eu comecei pela GameplayScreen.
         HelpBadge
             OK - Renderiza o botão de ajuda/regras ("rules on hover")
         ScoreBoard
-            Renderiza o placar
+            OK - Renderiza o placar
         GameBoard
             OK - Renderiza as CARTAS
                 OK - Precisa saber QUANTAS cartas mostrar
@@ -31,11 +31,9 @@ Eu comecei pela GameplayScreen.
         OK - click on a card -> randomize positions
         OK - Keep track of clicked cards
         OK - Check after click: is it a NEW click or a DOUBLE click on a card? If NEW click, have ALL cards been clicked?
-            - se double click OU all clicked -> game over screen 
-                - Precisa do componente GameOverScreen
-                
-                
-                SINCRONIZAR O CARDSTOSHOW COM ACTIVE SCREEN? DIGO: QUERO DESMARCAR OS CARDS QUANDO DÁ GAMEOVER OU QUANDO RETORNA PRA HOME (OU SEJA - A QUALQUER MOMENTO QUE O BOARD NÃO ESTEJA VISÍVEL / O JOGO NÃO ESTEJA SENDO JOGADO)
+            OK - se double click OU all clicked -> game over screen 
+                OK - SINCRONIZAR O CARDSTOSHOW COM ACTIVE SCREEN? DIGO: QUERO DESMARCAR OS CARDS QUANDO DÁ GAMEOVER OU QUANDO RETORNA PRA HOME (OU SEJA - A QUALQUER MOMENTO QUE O BOARD NÃO ESTEJA VISÍVEL / O JOGO NÃO ESTEJA SENDO JOGADO)
+                OK - Precisa do componente GameOverScreen
                 
                 
                 

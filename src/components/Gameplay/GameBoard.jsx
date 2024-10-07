@@ -4,13 +4,12 @@ import '../../style/App.css';
 import '../../style/index.css';
 import Card from './Card';
 import '../../style/GameBoard.css';
-import ScoreBoard from './ScoreBoard';
 
 export default function GameBoard({
   dogsArr,
   numberOfCards,
-  scoreBoard,
   handleGameOver,
+  updateScoreboard,
 }) {
   const [cardsToShowArr, setCardsToShowArr] = useState(null);
   const [shuffledCards, setShuffledCards] = useState(null);
@@ -45,7 +44,7 @@ export default function GameBoard({
   const handleCardClick = (e) => {
     function handleCardAlreadyClicked() {
       alert('this dog was already clicked');
-      handleGameOver();
+      handleGameOver(false);
     }
 
     function checkAllCardsClicked(breedIndex) {
@@ -60,7 +59,7 @@ export default function GameBoard({
 
     function handleAllCardsClicked() {
       alert('you won, babyyyyyyyyyyyyyyy');
-      handleGameOver();
+      handleGameOver(true);
     }
 
     function shuffleCards() {
@@ -89,7 +88,7 @@ export default function GameBoard({
     if (breedIndex >= 0) {
       if (!isClicked) {
         markCard(breed);
-        scoreBoard.updateScoreboard();
+        updateScoreboard();
         checkAllCardsClicked(breedIndex) ? handleAllCardsClicked() : null;
         shuffleCards();
       } else {
