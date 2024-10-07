@@ -1,8 +1,8 @@
-export default function ScoreBoard({ score, bestScore }) {
+export default function ScoreBoard({ score, bestScore, numberOfCards }) {
   return (
     <div className="scoreboard-container">
-      <div className="score">{score}</div>
-      <div className="best-score">{bestScore}</div>
+      <div className="score">{`SCORE: ${score} / ${numberOfCards}`}</div>
+      <div className="best-score">{`BEST SCORE: ${bestScore}`}</div>
     </div>
   );
 }

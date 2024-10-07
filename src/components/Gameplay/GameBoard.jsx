@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState, useEffect } from 'react';
 import '../../style/App.css';
 import '../../style/index.css';
@@ -5,15 +6,21 @@ import Card from './Card';
 import '../../style/GameBoard.css';
 import ScoreBoard from './ScoreBoard';
 
-export default function GameBoard({ difficulty = 1, dogsArr }) {
-  const numberOfCards = difficulty === 1 ? 9 : difficulty < 3 ? 16 : 25;
+export default function GameBoard({
+  dogsArr,
+  numberOfCards,
+  scoreBoard,
+  handleGameOver,
+}) {
   const [cardsToShowArr, setCardsToShowArr] = useState(null);
   const [shuffledCards, setShuffledCards] = useState(null);
 
   useEffect(() => {
     if (dogsArr) {
-      setCardsToShowArr(dogsArr.slice(0, numberOfCards));
-      setShuffledCards(dogsArr.slice(0, numberOfCards));
+      const dogsArrDeepCopy = JSON.parse(JSON.stringify(dogsArr.slice(0, numberOfCards)));
+
+      setCardsToShowArr([...dogsArrDeepCopy]);
+      setShuffledCards([...dogsArrDeepCopy]);
     }
   }, [dogsArr, numberOfCards]);
 
@@ -38,6 +45,7 @@ export default function GameBoard({ difficulty = 1, dogsArr }) {
   const handleCardClick = (e) => {
     function handleCardAlreadyClicked() {
       alert('this dog was already clicked');
+      handleGameOver();
     }
 
     function checkAllCardsClicked(breedIndex) {
@@ -52,6 +60,7 @@ export default function GameBoard({ difficulty = 1, dogsArr }) {
 
     function handleAllCardsClicked() {
       alert('you won, babyyyyyyyyyyyyyyy');
+      handleGameOver();
     }
 
     function shuffleCards() {
@@ -80,6 +89,7 @@ export default function GameBoard({ difficulty = 1, dogsArr }) {
     if (breedIndex >= 0) {
       if (!isClicked) {
         markCard(breed);
+        scoreBoard.updateScoreboard();
         checkAllCardsClicked(breedIndex) ? handleAllCardsClicked() : null;
         shuffleCards();
       } else {

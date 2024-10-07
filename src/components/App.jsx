@@ -10,8 +10,13 @@ export default function App() {
   const [activeScreen, setActiveScreen] = useState('home');
   const [difficulty, setDifficulty] = useState(null);
   const [dogsArr, setDogsArr] = useState(null);
-  const [bestScore, setBestScore] = useState(null);
-  const [score, SetScore] = useState(0);
+  const [bestScore, setBestScore] = useState({
+    easy : 0,
+    medium : 0,
+    hard : 0,
+  });
+
+
 
   useEffect(() => {
     async function fetchDogs() {
@@ -137,10 +142,11 @@ export default function App() {
       ) : (
         <GameplayScreen
           setActiveScreen={setActiveScreen}
+          activeScreen={activeScreen}
           difficulty={difficulty}
           dogsArr={dogsArr}
-          score={score}
           bestScore={bestScore}
+          setBestScore={setBestScore}
         />
       )}
       <HelpBadge />

@@ -1,16 +1,16 @@
 dogImages.js -> get all data BEFORE initializing the game
 
 App
+    HelpBadge
     HomeScreen
         DifficultySelector
     GameplayScreen
         ScoreBoard
         GameBoard
-        HelpBadge
-    GameOverScreen
-        GameOverMessage
-        GameOverPrompt
-        GameOverOptions
+        GameOverScreen
+            GameOverMessage
+            GameOverPrompt
+            GameOverOptions
 
 
 Eu comecei pela GameplayScreen. 
@@ -35,7 +35,7 @@ Eu comecei pela GameplayScreen.
                 - Precisa do componente GameOverScreen
                 
                 
-                
+                SINCRONIZAR O CARDSTOSHOW COM ACTIVE SCREEN? DIGO: QUERO DESMARCAR OS CARDS QUANDO DÁ GAMEOVER OU QUANDO RETORNA PRA HOME (OU SEJA - A QUALQUER MOMENTO QUE O BOARD NÃO ESTEJA VISÍVEL / O JOGO NÃO ESTEJA SENDO JOGADO)
                 
                 
                 
