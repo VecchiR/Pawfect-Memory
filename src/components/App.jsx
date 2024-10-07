@@ -139,6 +139,8 @@ export default function App() {
           setActiveScreen={setActiveScreen}
           difficulty={difficulty}
           dogsArr={dogsArr}
+          score={score}
+          bestScore={bestScore}
         />
       )}
       <HelpBadge />

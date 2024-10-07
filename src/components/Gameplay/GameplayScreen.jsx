@@ -2,14 +2,12 @@ import ScoreBoard from './ScoreBoard';
 import GameBoard from './GameBoard';
 import { useState } from 'react';
 
-export default function GameplayScreen({ setActiveScreen, difficulty, dogsArr }) {
+export default function GameplayScreen({ setActiveScreen, difficulty, dogsArr, score, bestScore }) {
   const goHome = () => {
     setActiveScreen('home');
   };
 
-  const handleEndGame = () => {
-
-  };
+  const handleEndGame = () => {};
 
   return (
     <>
@@ -17,9 +15,13 @@ export default function GameplayScreen({ setActiveScreen, difficulty, dogsArr })
         Logo
       </div>
       <h2>This is the Gameplay Screen</h2>
-      <ScoreBoard />
+      <ScoreBoard score={score} bestScore={bestScore} />
 
-      {dogsArr != null ? <GameBoard difficulty={difficulty} dogsArr={dogsArr} /> : <p>Loading dogs...</p>}
+      {dogsArr != null ? (
+        <GameBoard difficulty={difficulty} dogsArr={dogsArr} />
+      ) : (
+        <p>Loading dogs...</p>
+      )}
     </>
   );
 }

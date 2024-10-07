@@ -31,8 +31,8 @@ Eu comecei pela GameplayScreen.
         OK - click on a card -> randomize positions
         OK - Keep track of clicked cards
         OK - Check after click: is it a NEW click or a DOUBLE click on a card? If NEW click, have ALL cards been clicked?
-            - se double click -> game over screen 
-            - se all clicked -> game over screen
+            - se double click OU all clicked -> game over screen 
+                - Precisa do componente GameOverScreen
                 
                 
                 
