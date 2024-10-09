@@ -38,3 +38,11 @@
 .scoreboard-container {
     font-size: 24px;
 }
+
+.gameplay-screen > p {
+    height: 100%;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    font-size: 32px;
+}

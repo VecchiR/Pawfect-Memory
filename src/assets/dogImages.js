@@ -70,6 +70,5 @@ async function getDogs() {
 }
 
 
-// getDogs();
 
 export default getDogs;
