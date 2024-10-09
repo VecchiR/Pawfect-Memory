@@ -1,15 +1,24 @@
 .help-badge img {
     width: 50px;
     position: fixed;
-    bottom: 0;
-    right: 0px;
+    bottom: 20px;
+    right: 20px;
 }
 
 .rules {
     text-align: left;
-    background-color: blueviolet;
+    background-color: var(--text);
+    color: var(--background);
     position: fixed;
-    bottom: 40px;
-    right: 40px;
+    bottom: 60px;
+    right: 60px;
     z-index: 1;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 50px;
+    border-bottom-right-radius: 0;
+}
+
+.help-badge img:hover {
+    filter: ;
 }

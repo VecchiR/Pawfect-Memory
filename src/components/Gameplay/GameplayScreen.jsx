@@ -2,6 +2,7 @@
 import ScoreBoard from './ScoreBoard';
 import GameBoard from './GameBoard';
 import GameOverScreen from '../Game Over/GameOverScreen';
+import '../../style/gameplayScreen.css';
 import { useState } from 'react';
 
 export default function GameplayScreen({
@@ -14,7 +15,9 @@ export default function GameplayScreen({
 }) {
   const [score, setScore] = useState(0);
 
-  const numberOfCards = difficulty === 1 ? 9 : difficulty < 3 ? 16 : 25;
+  // const numberOfCards = difficulty === 1 ? 9 : difficulty < 3 ? 16 : 25;
+  const numberOfCards = difficulty === 1 ? 8 : difficulty < 3 ? 12 : 18;
+
 
   const updateScoreboard = () => {
     const newScore = score + 1;
@@ -28,7 +31,7 @@ export default function GameplayScreen({
     }
   };
 
-  const resetScore = () => { 
+  const resetScore = () => {
     setScore(0);
   };
 
@@ -43,12 +46,26 @@ export default function GameplayScreen({
   const tryAgain = () => {
     resetScore();
     setActiveScreen('gameplay');
-  }
+  };
 
   return (
-    <>
-      <div className="logo-small" onClick={goHome}>
-        Logo
+    <div className='gameplay-screen'>
+      <div className="header">
+        <div className="logo-container">
+          <div className="logo-small" onClick={goHome}>
+            Pawfect Memory
+          </div>
+          <img src="src/assets/shiba-logo-no-shadow.png" alt="" onClick={goHome} />
+        </div>
+        {activeScreen.gameover ? null : (
+          <ScoreBoard
+            score={score}
+            bestScore={
+              bestScore[`${difficulty === 1 ? 'easy' : difficulty === 2 ? 'medium' : 'hard'}`]
+            }
+            numberOfCards={numberOfCards}
+          />
+        )}
       </div>
 
       {activeScreen.gameover ? (
@@ -61,17 +78,6 @@ export default function GameplayScreen({
         />
       ) : (
         <>
-          <h2>This is the Gameplay Screen</h2>
-          <ScoreBoard
-            score={score}
-            bestScore={
-              bestScore[
-                `${difficulty === 1 ? 'easy' : difficulty === 2 ? 'medium' : 'hard'}`
-              ]
-            }
-            numberOfCards={numberOfCards}
-          />
-
           {dogsArr != null ? (
             <GameBoard
               difficulty={difficulty}
@@ -85,6 +91,6 @@ export default function GameplayScreen({
           )}
         </>
       )}
-    </>
+    </div>
   );
 }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import '../style/App.css';
+import '../style/colorsAndDetails.css';
 import GameplayScreen from './Gameplay/GameplayScreen';
 import getDogs from '../assets/dogImages';
 import GameBoard from './Gameplay/GameBoard';

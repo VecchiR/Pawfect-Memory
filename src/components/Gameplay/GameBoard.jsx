@@ -43,7 +43,6 @@ export default function GameBoard({
 
   const handleCardClick = (e) => {
     function handleCardAlreadyClicked() {
-      alert('this dog was already clicked');
       handleGameOver(false);
     }
 
@@ -58,7 +57,6 @@ export default function GameBoard({
     }
 
     function handleAllCardsClicked() {
-      alert('you won, babyyyyyyyyyyyyyyy');
       handleGameOver(true);
     }
 

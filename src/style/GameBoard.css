@@ -1,26 +1,26 @@
 .gameboard {
     display: grid;
-    gap: 10px; /* Adjust spacing between images */
-    /* justify-content: center;
-    align-items: center; */
+    gap: 20px;
+    padding: 0 210px;
+    justify-content: center;
+    height: 100%;
+    place-content: center;
+
   }
   
-  /* 3x3 grid for 9 images */
-  .grid-9 {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+  .grid-8 {
+    grid-template-columns: repeat(4, minmax(200px, 50%));
+    grid-template-rows: repeat(2, minmax(200px, 40%));
   }
   
-  /* 4x4 grid for 16 images */
-  .grid-16 {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+  .grid-12 {
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    grid-template-rows: repeat(3, minmax(200px, 0.8fr));
   }
   
-  /* 5x5 grid for 25 images */
-  .grid-25 {
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+  .grid-18 {
+    grid-template-columns: repeat(6, minmax(200px, 70%));
+    grid-template-rows: repeat(3, minmax(200px, 30%));
   }
   
   .grid-item img {

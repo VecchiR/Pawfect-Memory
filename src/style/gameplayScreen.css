@@ -1,0 +1,40 @@
+.gameplay-screen {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 32px;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 10px;
+    font-size: 40px;
+    transition: filter 0.3s, text-decoration 0.3s, color 0.3s, scale 0.3s;
+}
+.logo-container:hover {
+    scale: 0.97;
+    cursor: pointer;
+    color: var(--primary);
+    text-decoration: underline;
+    text-decoration-color: var(--text);
+    text-decoration-style: dashed;
+    text-decoration-thickness: 4px;
+    text-underline-position: under;
+}
+
+.logo-container img {
+    width: 80px;
+}
+
+
+.scoreboard-container {
+    font-size: 24px;
+}
