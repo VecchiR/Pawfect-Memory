@@ -3,6 +3,7 @@ import ScoreBoard from './ScoreBoard';
 import GameBoard from './GameBoard';
 import GameOverScreen from '../Game Over/GameOverScreen';
 import '../../style/gameplayScreen.css';
+import logo from '../../assets/shiba-logo-no-shadow.png';
 import { useState } from 'react';
 
 export default function GameplayScreen({
@@ -55,7 +56,7 @@ export default function GameplayScreen({
           <div className="logo-small" onClick={goHome}>
             Pawfect Memory
           </div>
-          <img src="../../assets/shiba-logo-no-shadow.png" alt="" onClick={goHome} />
+          <img src={logo} alt="" onClick={goHome} />
         </div>
         {activeScreen.gameover ? null : (
           <ScoreBoard

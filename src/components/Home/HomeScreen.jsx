@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import '../../style/homeScreen.css';
+import logo from '../../assets/shiba-logo-no-shadow.png';
+
 
 export default function HomeScreen({ setActiveScreen, setDifficulty, dogsArr }) {
   const goPlay = (n) => {
@@ -10,7 +12,7 @@ export default function HomeScreen({ setActiveScreen, setDifficulty, dogsArr }) 
   return (
     <div className="home-screen">
       <div className="logo-home">
-      <img src="../../assets/shiba-logo-no-shadow.png" alt="" />
+      <img src={logo} alt="" />
         <h1>Pawfect Memory</h1>
       </div>
       <div className="home-buttons">
