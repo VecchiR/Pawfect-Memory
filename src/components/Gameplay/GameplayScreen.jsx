@@ -55,7 +55,7 @@ export default function GameplayScreen({
           <div className="logo-small" onClick={goHome}>
             Pawfect Memory
           </div>
-          <img src="src/assets/shiba-logo-no-shadow.png" alt="" onClick={goHome} />
+          <img src="../../assets/shiba-logo-no-shadow.png" alt="" onClick={goHome} />
         </div>
         {activeScreen.gameover ? null : (
           <ScoreBoard
